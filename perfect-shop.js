@@ -9,7 +9,7 @@ document.querySelector('#kroger-button').addEventListener('click', function () {
         addItems(userInput)
         krogerItemList.push(userInput)
         console.log('hi')
-        // click kroger button, type item, click add item - how to link them all? together?
+        // click kroger button, type item, click add item - how to link them all together?
     }
 })
 
