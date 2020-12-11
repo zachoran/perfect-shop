@@ -1,54 +1,68 @@
 const krogerItemList = []
 const targetItemList = []
-const foodCityItemList = []  // there will be 4 lists
+const foodCityItemList = []
 const costcoItemList = []
+let selectedStoreButton = ''
 
 document.querySelector('#kroger-button').addEventListener('click', function () {
-    const userInput = document.querySelector('#item-input-blank').value
-    if (userInput !== '') {
-        addItems(userInput)
-        krogerItemList.push(userInput)
-        console.log('hi')
-        // click kroger button, type item, click add item - how to link them all together?
-    }
+    selectedStoreButton = 'Kroger'
 })
 
 document.querySelector('#target-button').addEventListener('click', function () {
-    console.log('hi')
+    selectedStoreButton = 'Target'
 })
 
 document.querySelector('#food-city-button').addEventListener('click', function () {
-    console.log('hi')
+    selectedStoreButton = 'Food City'
 })
 
 document.querySelector('#costco-button').addEventListener('click', function () {
-    console.log('hi')
+    selectedStoreButton = 'Costco'
 })
 
 
 document.querySelector('#add-item-button').addEventListener('click', function () {
     const userInput = document.querySelector('#item-input-blank').value
     if (userInput !== '') {
-        addItems(userInput)
-        items.push(userInput)
-        console.log(items)
+        if (selectedStoreButton === 'Kroger') {
+            krogerItemList.push(userInput)
+        } else if (selectedStoreButton === 'Target') {
+            targetItemList.push(userInput)
+        } else if (selectedStoreButton === 'Food City') {
+            foodCityItemList.push(userInput)
+        } else if (selectedStoreButton === 'Costco') {
+            costcoItemList.push(userInput)
+        }
+
     }
     document.querySelector('#item-input-blank').value = ''
     renderItems()
 })
 
 const renderItems = function () {
-    document.querySelector('#item-list').innerHTML = ''
-    items.forEach(function (currentItem) {
-        addItems(currentItem)
+    document.querySelector('#kroger-item-list').innerHTML = ''
+    krogerItemList.forEach(function (currentItem) {
+        addItems(currentItem, '#kroger-item-list')
+    })
+    document.querySelector('#target-item-list').innerHTML = ''
+    targetItemList.forEach(function (currentItem) {
+        addItems(currentItem, '#target-item-list')
+    })
+    document.querySelector('#food-city-item-list').innerHTML = ''
+    foodCityItemList.forEach(function (currentItem) {
+        addItems(currentItem, '#food-city-item-list')
+    })
+    document.querySelector('#costco-item-list').innerHTML = ''
+    costcoItemList.forEach(function (currentItem) {
+        addItems(currentItem, '#costco-item-list')
     })
 }
 
-const addItems = function (currentItem) {
+const addItems = function (currentItem, store) {
     const listItem = document.createElement('li')
     listItem.textContent = currentItem
     listItem.classList.add('listItem')
-    document.querySelector('#item-list').appendChild(listItem)
+    document.querySelector(store).appendChild(listItem)
     makeCheckbox(listItem)
 }
 
