@@ -62,7 +62,7 @@ const renderListItem = function (currentItem, store) {
     listItem.classList.add('listItem')
     document.querySelector(store).appendChild(listItem)
     makeCheckbox(listItem)
-    makeRemoveButton(listItem, 0, store)
+    makeRemoveButton(listItem, 0, store)                           // why do we have a 0?
     saveItems()
 }
 
@@ -104,13 +104,13 @@ const makeRemoveButton = function (listItem, itemIndex, store) {
 
 const loadItems = function () {
     const krogerItemListJSON = localStorage.getItem('perfect-shop-kroger-list')
-    krogerItemList = JSON.parse(krogerItemListJSON)
+    krogerItemList = JSON.parse(krogerItemListJSON) || []
     const targetItemListJSON = localStorage.getItem('perfect-shop-target-list')
-    targetItemList = JSON.parse(targetItemListJSON)
+    targetItemList = JSON.parse(targetItemListJSON) || []
     const foodCityItemListJSON = localStorage.getItem('perfect-shop-food-city-list')
-    foodCityItemList = JSON.parse(foodCityItemListJSON)
+    foodCityItemList = JSON.parse(foodCityItemListJSON) || []
     const costcoItemListJSON = localStorage.getItem('perfect-shop-costco-list')
-    costcoItemList = JSON.parse(costcoItemListJSON)
+    costcoItemList = JSON.parse(costcoItemListJSON) || []
 }
 
 const saveItems = function () {
