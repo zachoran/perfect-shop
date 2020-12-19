@@ -31,6 +31,8 @@ document.querySelector('#add-item-button').addEventListener('click', function ()
             foodCityItemList.push({title: userInput, completed: false})
         } else if (selectedStoreButton === 'Costco') {
             costcoItemList.push({title: userInput, completed: false})
+        } else {
+            alert('Please select a store.')
         }
     }
     document.querySelector('#item-input-blank').value = ''
