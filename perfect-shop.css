@@ -4,11 +4,10 @@
     height: 100%;
     width: 100%;
     background: rgb(47,79,79);
-    background: linear-gradient(180deg, rgba(47,79,79,1) 0%, rgba(0,0,0,1) 100%);
 }
 
 #body {
-    min-width: 420px;
+    min-width: 378px;
 }
 
 #page-title {
@@ -21,7 +20,7 @@
     padding-bottom: 25px;
 }
 
-#control-board-div {
+#control-board {
     display: flex;
     justify-content: center;
     align-items: baseline;
@@ -29,24 +28,12 @@
 }
 
 .shop-buttons {
-    border-radius: 5px;
-    height: 40px;
+    border-radius: 12px;
+    border-width: 4px;
+    height: 50px;
     padding: 0px 7px 0px 7px;
     margin-left: 15px;
     margin-bottom: 15px;
-}
-
-.shop-lists {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 25px;
-    display: grid;
-    justify-content: space-evenly;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    padding: 0;
-    list-style: none;
-    width: 100%;
 }
 
 #kroger-button {
@@ -68,6 +55,46 @@
     background-color: rgb(238, 238, 238);
     color: black;
     margin-right: 15px;
+}
+
+#input-board {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+#item-input-blank {
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 4px;
+    margin-left: 20px;
+    margin-top: 12px;
+    height: 35px;
+    width: 240px;
+    font-size: 20px;
+}
+
+#add-item-button {
+    background-color: rgb(54, 54, 54);
+    color: white;
+    border-radius: 12px;
+    border-width: 4px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.shop-lists {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    display: grid;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding: 0;
+    list-style: none;
+    width: 100%;
 }
 
 #kroger-item-list {
@@ -93,32 +120,26 @@
 
 .checkbox {
     margin-left: 30px;
+    transform: scale(2);
 }
 
 .remove-button {
     background-color: rgb(54, 54, 54);
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
+    border-width: 4px;
+    height: 40px;
     margin-left: 30px;
 }
 
-#item-input-blank {
-    border-radius: 8px;
-    border-width: 1px;
-    padding: 4px;
-    margin-left: 20px;
-    margin-top: 12px;
-    height: 35px;
-    width: 260px;
-    font-size: 20px;
-}
-
-#add-item-button {
-    background-color: rgb(54, 54, 54);
-    color: white;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 20px;
+#footer {
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    color: #ffdead;
+    font-weight: bolder;
+    font-size: 10px;
+    padding-bottom: 25px;
 }
 
 /* @media screen and (min-width: 768px) {
