@@ -129,11 +129,6 @@
     margin-left: 14px;
 }
 
-#footer-container {
-    position: relative;
-    min-height: 30px;
-}
-
 #footer {
     display: flex;
     justify-content: center;
@@ -144,6 +139,7 @@
     padding: 10px 0px 10px 0px;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
 }
 
