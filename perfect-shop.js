@@ -64,7 +64,7 @@ const renderListItem = function (currentItem, store) {
     listItem.classList.add('listItem')
     document.querySelector(store).appendChild(listItem)
     makeCheckbox(listItem)
-    makeRemoveButton(listItem, 0, store)                           // why do we have a 0?
+    makeRemoveButton(listItem, 0, store)                           // why do we have a 0? - this allows item to be removed, grabs index
     saveItems()
 }
 
@@ -72,7 +72,8 @@ const makeCheckbox = function (listItem) {
     const checkbox = document.createElement('input')
     checkbox.setAttribute('type', 'checkbox')
     checkbox.classList.add('checkbox')
-    listItem.appendChild(checkbox)
+    // listItem.appendChild(checkbox)
+    listItem.prepend(checkbox)
     checkbox.addEventListener('change', function () {
         if (!checkbox) {
             checkbox
