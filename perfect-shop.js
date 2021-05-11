@@ -41,11 +41,11 @@ document.querySelector('#add-item-button').addEventListener('click', function ()
 
 const renderItems = function () {
     document.querySelector('#kroger-item-list').innerHTML = ''
-    krogerItemList.forEach(function (currentItem) {
+    krogerItemList.forEach(function (currentItem) {                    // this is for the actual js list
         renderListItem(currentItem, '#kroger-item-list')
     })
     document.querySelector('#target-item-list').innerHTML = ''
-    targetItemList.forEach(function (currentItem) {
+    targetItemList.forEach(function (currentItem) {                        // please explain again
         renderListItem(currentItem, '#target-item-list')
     })
     document.querySelector('#food-city-item-list').innerHTML = ''
@@ -60,7 +60,7 @@ const renderItems = function () {
 
 const renderListItem = function (currentItem, store) {
     const listItem = document.createElement('li')
-    listItem.textContent = currentItem.title
+    listItem.textContent = currentItem.title                             // this is for ui list
     listItem.classList.add('listItem')
     document.querySelector(store).appendChild(listItem)
     makeCheckbox(listItem)
@@ -76,7 +76,7 @@ const makeCheckbox = function (listItem) {
     listItem.prepend(checkbox)
     checkbox.addEventListener('change', function () {
         if (!checkbox) {
-            checkbox
+            checkbox         // why do we need the !checkbox and checkbox? doesn't seem to do anything when switched.
         }
     })
     saveItems()
